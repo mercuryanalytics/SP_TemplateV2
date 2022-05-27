@@ -1,0 +1,162 @@
+﻿<html>
+  <!--
+Licensed Materials - Property of UNICOM Systems, Inc.
+(C) Copyright UNICOM Systems, Inc. - a Division of UNICOM Global. 2001 - 2017
+-->
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title><mrPageTitle/></title>
+    <mrRef
+      RefType="link"
+      rel="stylesheet"
+      type="text/css"
+      href="Template/CSS/default.css"
+    />
+    <mrRef
+      RefType="link"
+      rel="stylesheet"
+      type="text/css"
+      href="Template/CSS/jquery-ui.min.css"
+    />
+    <mrRef
+      RefType="link"
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (min-width: 801px)"
+      href="Template/CSS/wide.css"
+    />
+    <mrRef
+      RefType="link"
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (min-width: 401px) and (max-width: 800px)"
+      href="Template/CSS/mid.css"
+    />
+    <mrRef
+      RefType="link"
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (max-width: 400px)"
+      href="Template/CSS/narrow.css"
+    />
+    <mrRef
+      RefType="script"
+      id="mediaQueryChecker"
+      type="text/javascript"
+      src="Template/JS/jquery-3.6.0.min.js"
+      >//Script</mrRef
+    >
+    <mrRef
+      RefType="script"
+      id="mediaQueryChecker"
+      type="text/javascript"
+      src="Template/JS/default.js"
+      defer="true"
+      >//Script</mrRef
+    >
+
+    <mrRef
+      RefType="script"
+      id="mediaQueryChecker"
+      type="text/javascript"
+      src="Template/JS/jquery-ui.min.js"
+      defer="true"
+      >//Script</mrRef
+    >
+    <link
+      rel="stylesheet"
+      href="https://workbench.mercuryanalytics.com/api/recorder.css"
+    />
+    <script src="https://workbench.mercuryanalytics.com/api/recorder.js">
+      //Script
+    </script>
+    <style>
+      .mrNext {
+        display: none;
+      }
+      .popupdiv {
+        display: inline-block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 20vw;
+        height: 13vh;
+        margin: auto;
+        background-image: linear-gradient(
+          rgba(299, 299, 299, 0.6),
+          rgb(249, 179, 97),
+          rgba(299, 299, 299, 0.6)
+        );
+        box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        padding: 10px 10px 10px 10px;
+        border-radius: 25px;
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="content" class="content">
+      <mrPage IncludeElementIDs="true" />
+      <mrBannerText Name="LOGOS" class="logo"> [JSText] </mrBannerText>
+      <div id="questionArea" class="questionArea">
+        <mrBannerText>mrBannerText</mrBannerText><br />
+        <mrBannerText Name="QName"> [QuestionName] </mrBannerText>
+        <div class="popupdiv">
+          <mrData QuestionElement="Banner" Name="infoidle"
+            >Questions here</mrData
+          >
+        </div>
+        <mrData QuestionElement="Errors">Questions here</mrData><br />
+        <mrData QuestionElement="Label">Questions here</mrData><br />
+        <hr />
+        <br />
+        <div class="question-controls" style="display: none">
+          <mrData QuestionElement="Controls">Questions here</mrData><br />
+        </div>
+      </div>
+      <div class="nav">
+        <span style="direction: rtl; float: left; padding-right: 10px">
+          <mrNavButton Name="Next" />
+          <mrNavButton Name="Prev" />
+        </span>
+      </div>
+
+      <mrBannerText Name="footer" class="footer"> [JSText] </mrBannerText>
+    </div>
+  </body>
+  <script>
+    $("[data-hg-recorder]").on("mercury:complete", function (event) {
+      event = event.originalEvent;
+      if ($("#_Q0").length != 0) {
+        var str =
+          event.detail.response.rid + "@" + event.detail.response.data.samples;
+        $("#_Q0").val(str.substring(0, 1000));
+        console.log(str);
+      }
+      $("#mrForm").submit();
+    });
+    $("[data-hg-recorder]").on("mercury:idle", function (event) {
+      this.pause();
+      $(".popupdiv").show();
+    });
+    $(".mrNext2").click(function () {
+      if ($(this).attr("id") === "idleYes") {
+        $(".popupdiv").hide();
+        $("div[data-hg-recorder]")[0].resume();
+      }
+      if ($(this).attr("id") === "idleNo") {
+        $(".popupdiv").hide();
+        $("div[data-hg-recorder]")[0].stop();
+        $("#_Q0").val("stopped");
+      }
+    });
+  </script>
+</html>

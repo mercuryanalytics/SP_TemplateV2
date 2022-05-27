@@ -1,0 +1,210 @@
+.mrQuestionText {
+  line-height: 2vw;
+  font-size: 1.2vw;
+  border-top: 0vw;
+  padding: 5vw 0vw 5vw 0vw;
+  text-align: center;
+}
+.nav {
+  padding: 0vw;
+  margin: 3vw 12vw -11vw 5vw;
+  border: 3vw;
+  top: 0vw;
+  left: 0vw;
+  text-align: center;
+  border-color: rgb(249, 179, 97);
+}
+.mrNext {
+  padding: 0.9vw 4vw 0.9vw 4vw;
+  background-color: rgb(249, 179, 97);
+  color: white;
+  font-size: 2vw;
+  border: white;
+  margin: 0vw -9vw 0vw 28vw;
+}
+.mrPrev {
+  padding: 0.9vw 4vw 0.9vw 4vw;
+  background-color: rgb(249, 179, 97);
+  color: white;
+  font-size: 2vw;
+  border: white;
+}
+#content {
+  position: absolute;
+  left: 13vw;
+  top: 46vw;
+  /* height: 0%; */
+  margin: -46vw 0vw 0vw 0vw;
+  padding: 0;
+
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.questionArea {
+  padding: 5vw;
+  padding-top: 0vw;
+  padding-bottom: 0vw;
+  top: -5vw;
+  max-width: 60vw;
+}
+.mrSingle {
+  background: white;
+  width: 2vw;
+  height: 2.5vw;
+}
+.mrSingleText {
+  background-color: white;
+  margin: 14px;
+  width: 18vw;
+  font-size: 1.5vw;
+}
+.mrQuestionTable {
+  margin: 0vw -4vw;
+}
+
+input[type="radio"]:checked + label {
+  background-color: rgb(249, 179, 97);
+}
+input[type="radio"]:checked + label span {
+  background-color: rgb(249, 179, 97);
+  color: white;
+}
+input[type="radio"] {
+  accent-color: rgb(217, 127, 0);
+}
+.mrEdit {
+  background-color: rgb(229, 229, 229);
+  border: none;
+  width: 5vw;
+  height: 3vw;
+  border-radius: 17%;
+}
+input[type="text"] {
+  font-size: 1.8vw;
+}
+input[type="text"]:focus {
+  outline-width: 0;
+}
+label[for="_Q0_X0"] {
+  left: 1vw;
+  top: 1vw;
+  margin: 9.7vw 41vw;
+  position: relative;
+  font-size: 1.4vw;
+}
+input[type="checkbox"] {
+  position: relative;
+  width: 4vw;
+  height: 2vw;
+  -webkit-appearance: none;
+  background: #c6c6c6;
+  outline: none;
+  left: 0.5vw;
+  top: 2vw;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(255, 0, 0, 0.2);
+}
+input:checked[type="checkbox"] {
+  background: rgb(249, 179, 97);
+}
+input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  width: 1.8vw;
+  height: 1.8vw;
+  border-radius: 20px;
+  top: 0.1vw;
+  left: 0.1vw;
+  background: #ffffff;
+  transform: scale(1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+input:checked[type="checkbox"]:before {
+  left: 2.1vw;
+}
+.mrMultipleText {
+  left: 3vw;
+  display: inline-block;
+  margin: 0.4vw -30vw;
+  text-indent: -11vw;
+}
+table {
+  border-collapse: collapse;
+}
+hr {
+  background-color: rgb(249, 179, 97);
+  border: none;
+  height: 1px;
+}
+.slider {
+  width: 25vw;
+  max-width: 60vw;
+  background-color: rgb(249, 179, 97);
+}
+.slider-cell {
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+.ui-slider .ui-slider-handle {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  position: absolute;
+  top: -10px;
+  border-style: none;
+  border-radius: 50%;
+  font-size: smaller;
+  padding: 2px;
+}
+.mrNext:hover {
+  background-image: linear-gradient(
+    rgba(299, 299, 299, 0.6),
+    rgb(249, 179, 97),
+    rgba(299, 299, 299, 0.6)
+  );
+  box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.2);
+}
+.mrPrev:hover {
+  background-image: linear-gradient(
+    rgba(299, 299, 299, 0.6),
+    rgb(249, 179, 97),
+    rgba(299, 299, 299, 0.6)
+  );
+  box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.mrGridTable table {
+  table-layout: fixed;
+  max-width: 60vw;
+  width: 80vw;
+}
+td {
+  overflow: hidden;
+  padding: 1vw 0.5vw;
+}
+tbody {
+  padding: 1vw;
+}
+.question-controls {
+  margin: 1vw 2vw;
+}
+.mrGridCategoryText {
+  padding: 1vw 1vw;
+  margin: 1vw 1vw;
+}
+input[type="range"] {
+  width: 30vw;
+}
+
+.logo {
+  width: 7vw;
+  margin-top: 50px;
+  margin: 2vw 4vw;
+}
+.mrGridTable td {
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  background: rgb(249, 179, 97); 
+}
