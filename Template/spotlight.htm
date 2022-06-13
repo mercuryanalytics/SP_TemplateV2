@@ -1,0 +1,134 @@
+﻿<html>
+  <!--
+Licensed Materials - Property of UNICOM Systems, Inc.
+(C) Copyright UNICOM Systems, Inc. - a Division of UNICOM Global. 2001 - 2017
+-->
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title><mrPageTitle/></title>
+    <mrRef
+      RefType="link"
+      rel="stylesheet"
+      type="text/css"
+      href="Template/CSS/default.css"
+    />
+    <mrRef
+      RefType="link"
+      rel="stylesheet"
+      type="text/css"
+      href="Template/CSS/jquery-ui.min.css"
+    />
+    <mrRef
+      RefType="link"
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (min-width: 801px)"
+      href="Template/CSS/wide.css"
+    />
+    <mrRef
+      RefType="link"
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (min-width: 401px) and (max-width: 800px)"
+      href="Template/CSS/mid.css"
+    />
+    <mrRef
+      RefType="link"
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (max-width: 400px)"
+      href="Template/CSS/narrow.css"
+    />
+    <mrRef
+      RefType="script"
+      id="mediaQueryChecker"
+      type="text/javascript"
+      src="Template/JS/jquery-3.6.0.min.js"
+      >//Script</mrRef
+    >
+    <mrRef
+      RefType="script"
+      id="mediaQueryChecker"
+      type="text/javascript"
+      src="Template/JS/default.js"
+      defer="true"
+      >//Script</mrRef
+    >
+
+    <mrRef
+      RefType="script"
+      id="mediaQueryChecker"
+      type="text/javascript"
+      src="Template/JS/jquery-ui.min.js"
+      >//Script</mrRef
+    >
+  </head>
+  <script>
+    $(document).ready(function () {
+      $(".mrNext").click(function () {
+        $(this).hide();
+      });
+      $("button[data-hg-spotlight]").on(
+        "hg-spotlight-complete",
+        function (event) {
+          $("#mrForm").submit();
+        }
+      );
+    });
+  </script>
+  <body>
+    <div
+      id="loading"
+      style="
+        background-image: url(Images/Mercury.gif) no-repeat center center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 9999999;
+      "
+    ></div>
+    <div id="content" class="content">
+      <mrPage IncludeElementIDs="true" />
+      <mrBannerText Name="LOGOS" class="logo"> [JSText] </mrBannerText>
+      <div class="questionArea">
+        <mrBannerText>mrBannerText</mrBannerText><br />
+        <mrBannerText Name="QName"> [QuestionName] </mrBannerText>
+        <mrData QuestionElement="Error" ShowErrors="TopMost"
+          >Questions here</mrData
+        ><br />
+        <mrData QuestionElement="Label">Questions here</mrData><br />
+        <hr />
+        <br />
+        <div class="spotlight-div">
+          <link
+            rel="stylesheet"
+            href="https://workbench.mercuryanalytics.com/api/spotlight.css"
+          />
+          <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Promise"></script>
+          <script src="https://workbench.mercuryanalytics.com/api/spotlight.js"></script>
+        </div>
+        <div class="question-controls">
+          <mrData QuestionElement="Controls">Questions here</mrData>
+        </div>
+      </div>
+      <div class="nav">
+        <span style="direction: rtl; float: left; padding-right: 10px">
+          <button class="mrNext" data-hg-finalize="true" data-hg-spotlight="">
+            Next
+          </button>
+          <mrNavButton Name="Prev" />
+        </span>
+      </div>
+      <script>
+        $("button").attr("data-hg-spotlight", iden);
+        $("button").attr("data-hg-rid", respID);
+      </script>
+    </div>
+  </body>
+</html>

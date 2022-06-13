@@ -170,21 +170,15 @@ var singleText = document.querySelectorAll(".mrSingleText");
 var singleChecked = (document.querySelectorAll(".mrSingle").checked = "True");
 var slider = document.querySelector(`[data-questiontype="slider"]`);
 var table = document.querySelector(".mrQuestionTable");
-var multiple= document.querySelectorAll(".mrMultipleText");
+var multiple = document.querySelectorAll(".mrMultipleText");
 single.forEach(function (i) {
   if (single.length < 8) {
     singleText.forEach(function (j) {
       i.style.display = "none";
-      i.addEventListener("click", function () {
-        console.log("hello1");
-      });
     });
   } else if (single.length > 7) {
     multiple.forEach(function (j) {
       i.style.display = "none";
-      i.addEventListener("click", function () {
-        console.log("hello2");
-      });
     });
   }
 });
@@ -212,6 +206,7 @@ function setGridSlider() {
       "'></div></td></tr>";
   });
   htmlText += "</html>";
+  //console.log(htmlText);
   $(".questionArea").append(htmlText);
   //getSliderVaues();
   createSlider();
@@ -262,8 +257,10 @@ for (var i = 0; i < 100; i++) {
     var eText = k.innerText;
     var Male = "Male";
     var Female = "Female";
+    var Yes = "Yes";
+    var No = "No";
     console.log(eText);
-    if (eText === Male || eText === Female) {
+    if (eText === Male || eText === Female || eText === Yes || eText === No) {
       labels.style.margin = "0vw 1vw 1vw 16vw";
       labels.style.border = "1px solid rgb(249, 179, 97)";
       labels.style.textAlign = "center";
@@ -280,10 +277,9 @@ for (var i = 0; i < 100; i++) {
     }
   });
 }
-for(var i = 0; i < 100; i++) {
-  var labels2 = document.querySelector(`label[for="_Q0_C${i}"] > span`)
-  if(!labels2) break;
-
+for (var i = 0; i < 100; i++) {
+  var labels2 = document.querySelector(`label[for="_Q0_C${i}"] > span`);
+  if (!labels2) break;
 }
 
 $(document).ready(function () {
@@ -304,27 +300,24 @@ $(document).ready(function () {
 });
 
 function hideLoader() {
-  $('#loading').hide();
+  $("#loading").hide();
 }
 
 $(window).ready(hideLoader);
 //setTimeout(hideLoader, 2 * 1000);//
 
-multiple.forEach(function(i){
-  if(multiple.length<2){
-    console.log("hello1")
-  i.style.left="3vw";
-  i.style.display="inline-block";
-  i.style.margin="0.4vw -42vw";
-  i.style.textIndent="1vw";
+multiple.forEach(function (i) {
+  if (multiple.length < 2) {
+    i.style.left = "3vw";
+    i.style.display = "inline-block";
+    i.style.margin = "0.4vw -42vw";
+    i.style.textIndent = "1vw";
+  } else if (multiple.length > 0) {
+    i.style.left = "3vw";
+    i.style.display = "inline-block";
+    i.style.margin = "2.5vw";
+    i.style.textIndent = "14vw";
+    i.style.position = "absolute";
+    i.style.fontSize = "1.4vw";
   }
-  else if(multiple.length>0){
-    console.log("hello2")
-  i.style.left="3vw";
-  i.style.display="inline-block";
-  i.style.margin="2.5vw";
-  i.style.textIndent="14vw";
-  i.style.position="absolute";
-  i.style.fontSize="1.4vw";
-  }
-})
+});

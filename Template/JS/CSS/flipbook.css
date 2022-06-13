@@ -1,0 +1,28 @@
+		<!-- flipbook loading animation-->
+			div[data-hg-flipbook] > div { position: relative; width: 234px; height: 28px; margin: auto; }
+			div[data-hg-flipbook] > div > div:nth-child(1) { left:   0px; animation-delay: 0.60s; }
+			div[data-hg-flipbook] > div > div:nth-child(2) { left:  29px; animation-delay: 0.75s; }
+			div[data-hg-flipbook] > div > div:nth-child(3) { left:  58px; animation-delay: 0.90s; }
+			div[data-hg-flipbook] > div > div:nth-child(4) { left:  88px; animation-delay: 1.05s; }
+			div[data-hg-flipbook] > div > div:nth-child(5) { left: 117px; animation-delay: 1.20s; }
+			div[data-hg-flipbook] > div > div:nth-child(6) { left: 146px; animation-delay: 1.35s; }
+			div[data-hg-flipbook] > div > div:nth-child(7) { left: 175px; animation-delay: 1.60s; }
+			div[data-hg-flipbook] > div > div:nth-child(8) { left: 205px; animation-delay: 1.64s; }
+			div[data-hg-flipbook] > div > div {
+			  position: absolute;
+			  top: 0;
+			  background-color: black;
+			  opacity: 0;
+			  width: 28px;
+			  height: 28px;
+			  animation-name: bounce-splash-screen;
+			  animation-duration: 1.5s;
+			  animation-iteration-count: infinite;
+			  animation-direction: normal;
+			  transform: scale(.3);
+			  border-radius: 19px;
+			}
+			@keyframes bounce-splash-screen {
+			  0% { transform:scale(1); background-color: black; opacity: 1; }
+			  100% { transform:scale(.3); background-color: white; opacity: 0; }
+			}

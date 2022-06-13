@@ -48,7 +48,6 @@ Licensed Materials - Property of UNICOM Systems, Inc.
       id="mediaQueryChecker"
       type="text/javascript"
       src="Template/JS/jquery-3.6.0.min.js"
-      defer="true"
       >//Script</mrRef
     >
     <mrRef
@@ -65,13 +64,23 @@ Licensed Materials - Property of UNICOM Systems, Inc.
       id="mediaQueryChecker"
       type="text/javascript"
       src="Template/JS/jquery-ui.min.js"
-      defer="true"
       >//Script</mrRef
     >
   </head>
 
   <body>
-    <div id="loading" style="background-image:url(Images/Mercury.gif) no-repeat center center;position: absolute;top: 0;left: 0;height: 100%;width: 100%;z-index: 9999999;"></div>
+    <div
+      id="loading"
+      style="
+        background-image: url(Images/Mercury.gif) no-repeat center center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 9999999;
+      "
+    ></div>
     <div id="content" class="content">
       <mrPage IncludeElementIDs="true" />
       <mrBannerText Name="LOGOS" class="logo"> [JSText] </mrBannerText>
